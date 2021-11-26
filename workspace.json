@@ -1,6 +1,9 @@
 {
   "version": 2,
   "projects": {
+    "mobile-app-e2e": "apps/mobile-app-e2e",
+    "my-app": "apps/my-app",
+    "my-app-e2e": "apps/my-app-e2e",
     "prova-tamagui": "apps/prova-tamagui",
     "prova-tamagui-e2e": "apps/prova-tamagui-e2e"
   }
