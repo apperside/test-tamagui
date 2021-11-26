@@ -1,0 +1,72 @@
+{
+  "root": "apps/prova-tamagui",
+  "sourceRoot": "apps/prova-tamagui/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/prova-tamagui",
+        "index": "apps/prova-tamagui/src/index.html",
+        "baseHref": "/",
+        "main": "apps/prova-tamagui/src/main.tsx",
+        "polyfills": "apps/prova-tamagui/src/polyfills.ts",
+        "tsConfig": "apps/prova-tamagui/tsconfig.app.json",
+        "assets": [
+          "apps/prova-tamagui/src/favicon.ico",
+          "apps/prova-tamagui/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/prova-tamagui/src/environments/environment.ts",
+              "with": "apps/prova-tamagui/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "prova-tamagui:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "prova-tamagui:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/prova-tamagui/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/prova-tamagui"],
+      "options": {
+        "jestConfig": "apps/prova-tamagui/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "prova-tamagui": "apps/prova-tamagui",
+    "prova-tamagui-e2e": "apps/prova-tamagui-e2e"
+  }
+}

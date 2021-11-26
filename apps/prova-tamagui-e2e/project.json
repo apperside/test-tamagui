@@ -1,0 +1,28 @@
+{
+  "root": "apps/prova-tamagui-e2e",
+  "sourceRoot": "apps/prova-tamagui-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/prova-tamagui-e2e/cypress.json",
+        "devServerTarget": "prova-tamagui:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "prova-tamagui:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/prova-tamagui-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["prova-tamagui"]
+}
